@@ -1,0 +1,170 @@
+
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>LAST COLOR — Before the Colors Fade</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- INTRO -->
+  <main id="intro" class="page active">
+
+    <div class="intro-content">
+
+      <p class="top-label">A JOURNEY BEFORE THE COLORS FADE</p>
+
+      <h1 class="logo">
+        LAST<br>
+        <span>COLOR</span>
+      </h1>
+
+      <p class="intro-subtitle">
+        ออกเดินทางไปทำสิ่งที่อยากทำกับแมวของคุณ ก่อนสีสุดท้ายจะหายไป
+      </p>
+
+      <p class="intro-text">
+        เมื่อสีสันบนโลกกำลังจะเลือนหาย<br>
+        คุณกับแมวตัวโปรดจะเลือกทำอะไรเป็นสิ่งสุดท้าย?
+      </p>
+
+      <button class="text-button" onclick="startStory()">
+        START THE STORY <span>→</span>
+      </button>
+
+    </div>
+
+    <div class="intro-bottom">
+      <span>SCROLL THROUGH YOUR FEELINGS</span>
+      <span>01 — 03</span>
+    </div>
+
+  </main>
+
+
+  <!-- STORY -->
+  <section id="story" class="page">
+
+    <div class="story-container">
+
+      <p class="chapter-label">CHAPTER 01 — BEFORE THE LAST COLOR</p>
+
+      <div class="story-visual">
+        <img id="storyImage" src="pics/transparent/charpter1.png" alt="ภาพแมวของคุณในเรื่อง">
+      </div>
+
+      <div id="storyText" class="story-text">
+        <h2>ก่อนสีสุดท้ายจะจางหาย</h2>
+
+        <p>
+          เช้าวันหนึ่ง คุณตื่นขึ้นมาพบว่าสีรอบตัวเริ่มซีดจาง
+        </p>
+
+        <p>
+          มีข่าวว่าก่อนแสงสุดท้ายจะลับขอบฟ้า สีทั้งหมดอาจสลายหายไป
+        </p>
+
+        <p>
+          คุณหันไปเห็นแมวตัวโปรดนั่งรออยู่ เพื่อนร่วมทางตัวจิ๋วที่อยู่เคียงข้างกันทุกวัน
+        </p>
+
+        <p>ทันใดนั้น คุณก็นึกถึงสิ่งที่อยากทำมาตลอด แต่ยังไม่ได้เริ่มเสียที</p>
+      </div>
+
+      <button class="text-button" onclick="nextStory()">
+        CONTINUE <span>→</span>
+      </button>
+
+      <span class="story-counter" id="storyCounter">01 / 03</span>
+
+    </div>
+
+  </section>
+
+
+  <!-- QUIZ -->
+  <section id="quiz" class="page">
+
+    <div class="quiz-container">
+
+      <div class="quiz-top">
+        <span>LAST COLOR</span>
+        <span id="questionCount">01 / 10</span>
+      </div>
+
+      <div class="question-art">
+        <!-- ภาพประกอบของคำถามแต่ละข้อ -->
+        <img
+          id="questionImage"
+          src="pics/transparent/Artboard 1.png"
+          alt="ภาพประกอบคำถาม"
+          onerror="this.style.display='none'"
+        >
+      </div>
+
+      <p class="question-intro" id="questionIntro">
+        THE CAT ASKS YOU...
+      </p>
+
+      <h2 id="questionText">
+        ถ้าวันหนึ่งสีสันทั้งหมดหายไป คุณจะรู้สึกอย่างไร?
+      </h2>
+
+      <div id="answerList" class="answer-list"></div>
+
+      <div class="quiz-footer">
+        <span id="questionProgress">01 / 10</span>
+        <span>CHOOSE YOUR FEELING</span>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ENDING / RESULT -->
+  <section id="ending" class="page">
+
+    <div class="ending-container">
+
+      <p class="chapter-label">YOUR LAST COLOR</p>
+
+      <div class="ending-visual">
+        <img src="pics/transparent/Artboard end.png" alt="ภาพประกอบตอนจบ">
+      </div>
+
+      <p class="ending-intro">
+        THE CAT FOUND SOMETHING...
+      </p>
+
+      <h1 id="resultTitle">YOUR COLOR</h1>
+
+      <h2 id="resultSubtitle">สีที่ยังคงอยู่ในใจ</h2>
+
+      <p id="resultDescription" class="result-description"></p>
+
+      <p id="resultMessage" class="result-message"></p>
+
+      <button class="text-button" onclick="restartStory()">
+        START AGAIN <span>↻</span>
+      </button>
+
+    </div>
+
+  </section>
+
+
+  <script src="script.js"></script>
+
+</body>
+</html>

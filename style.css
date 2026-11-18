@@ -1,0 +1,472 @@
+
+/* ==========================
+   LAST COLOR
+   MAIN STYLE
+========================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #080808;
+  color: #f5f5f5;
+  font-family: 'Itim', cursive;
+  overflow: hidden;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.page {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow-y: auto;
+  padding: 35px 20px;
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  transition: opacity 0.7s ease, visibility 0.7s ease;
+}
+
+.page.active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  z-index: 2;
+}
+
+.page::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(
+      circle at 50% 45%,
+      rgba(255,255,255,0.035),
+      transparent 55%
+    );
+  z-index: -1;
+}
+
+/* ==========================
+   TEXT
+========================== */
+
+.top-label,
+.chapter-label,
+.question-intro,
+.quiz-top,
+.quiz-footer {
+  font-size: 10px;
+  letter-spacing: 3px;
+  color: #777;
+}
+
+h1, h2, p {
+  overflow-wrap: break-word;
+}
+
+/* ==========================
+   BUTTON
+========================== */
+
+.text-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 25px;
+
+  margin-top: 35px;
+  padding: 12px 0;
+
+  color: #eee;
+  background: none;
+  border: none;
+  border-bottom: 1px solid #777;
+
+  font-size: 12px;
+  letter-spacing: 2px;
+
+  transition: 0.3s;
+}
+
+.text-button span {
+  font-size: 18px;
+}
+
+.text-button:hover {
+  color: #e8d28c;
+  border-color: #e8d28c;
+  transform: translateX(5px);
+}
+
+/* ==========================
+   INTRO
+========================== */
+
+.intro-content {
+  width: 100%;
+  max-width: 850px;
+  text-align: center;
+  animation: appear 1.2s ease both;
+}
+
+.logo {
+  margin-top: 30px;
+  font-size: clamp(75px, 15vw, 150px);
+  line-height: 0.82;
+  letter-spacing: -5px;
+  font-weight: 600;
+}
+
+.logo span {
+  color: transparent;
+  -webkit-text-stroke: 1px #eee;
+}
+
+.intro-subtitle {
+  margin-top: 35px;
+  color: #e8d28c;
+  font-size: 18px;
+}
+
+.intro-text {
+  margin-top: 18px;
+  color: #999;
+  font-size: 13px;
+  line-height: 2;
+  font-weight: 300;
+}
+
+.intro-bottom {
+  position: absolute;
+  bottom: 25px;
+  left: 35px;
+  right: 35px;
+
+  display: flex;
+  justify-content: space-between;
+
+  font-size: 9px;
+  letter-spacing: 2px;
+  color: #555;
+}
+
+/* ==========================
+   STORY
+========================== */
+
+.story-container {
+  width: 100%;
+  max-width: 650px;
+  text-align: center;
+  animation: appear 0.8s ease both;
+}
+
+.story-visual {
+  width: 145px;
+  height: 145px;
+  margin: 25px auto 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.story-visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.story-text {
+  min-height: 190px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.story-text h2 {
+  margin-bottom: 22px;
+  font-size: 28px;
+  font-weight: 400;
+}
+
+.story-text p {
+  margin-bottom: 12px;
+  color: #aaa;
+  font-size: 14px;
+  line-height: 2;
+  font-weight: 300;
+}
+
+.story-counter {
+  display: block;
+  margin-top: 30px;
+  font-size: 10px;
+  letter-spacing: 3px;
+  color: #555;
+}
+
+/* ==========================
+   QUIZ
+========================== */
+
+.quiz-container {
+  width: 100%;
+  max-width: 750px;
+  text-align: center;
+  animation: appear 0.7s ease both;
+}
+
+.quiz-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.quiz-top span:last-child {
+  color: #e8d28c;
+}
+
+.question-art {
+  width: 100%;
+  height: 150px;
+  margin: 20px auto 15px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.question-art img {
+  max-width: 260px;
+  max-height: 140px;
+  object-fit: contain;
+}
+
+.question-intro {
+  margin-bottom: 18px;
+  color: #e8d28c;
+  font-size: 15px;
+  letter-spacing: 0;
+}
+
+.quiz-container h2 {
+  max-width: 620px;
+  margin: 0 auto 35px;
+
+  font-size: clamp(21px, 4vw, 30px);
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+/* Answers: text only, no cards */
+
+.answer-list {
+  width: 100%;
+  max-width: 580px;
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.answer-button {
+  width: 100%;
+  padding: 15px 10px;
+
+  text-align: center;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #292929;
+
+  color: #aaa;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.7;
+
+  transition: 0.25s;
+}
+
+.answer-button:hover {
+  color: #fff;
+  border-color: #e8d28c;
+}
+
+.answer-button.selected {
+  color: #e8d28c;
+  border-color: #e8d28c;
+}
+
+.answer-button.selected::before {
+  content: "✦ ";
+}
+
+.quiz-footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 35px;
+  color: #555;
+}
+
+/* ==========================
+   ENDING
+========================== */
+
+.ending-container {
+  width: 100%;
+  max-width: 700px;
+  text-align: center;
+  animation: appear 1s ease both;
+}
+
+.ending-visual {
+  width: 150px;
+  height: 150px;
+  margin: 25px auto;
+}
+
+.ending-visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.ending-intro {
+  font-size: 10px;
+  letter-spacing: 3px;
+  color: #777;
+}
+
+.ending-container h1 {
+  margin-top: 18px;
+  font-size: clamp(45px, 10vw, 80px);
+  letter-spacing: 3px;
+}
+
+.ending-container h2 {
+  margin-top: 5px;
+  font-size: 20px;
+  font-weight: 400;
+  color: #e8d28c;
+}
+
+.result-description {
+  max-width: 500px;
+  margin: 25px auto 15px;
+  font-size: 14px;
+  line-height: 2;
+  color: #bbb;
+  font-weight: 300;
+}
+
+.result-message {
+  max-width: 500px;
+  margin: 20px auto;
+  font-size: 19px;
+  line-height: 1.8;
+  color: #e8d28c;
+}
+
+/* ==========================
+   ANIMATION
+========================== */
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ==========================
+   MOBILE
+========================== */
+
+@media (max-width: 600px) {
+
+  .page {
+    padding: 25px 22px;
+  }
+
+  .logo {
+    font-size: 82px;
+  }
+
+  .intro-subtitle {
+    font-size: 16px;
+  }
+
+  .story-visual {
+    width: 125px;
+    height: 125px;
+    margin: 25px auto;
+  }
+
+  .story-text {
+    min-height: 210px;
+  }
+
+  .story-text h2 {
+    font-size: 23px;
+  }
+
+  .story-text p {
+    font-size: 13px;
+  }
+
+  .question-art {
+    height: 125px;
+  }
+
+  .question-art img {
+    max-width: 220px;
+    max-height: 115px;
+  }
+
+  .quiz-container h2 {
+    font-size: 21px;
+    margin-bottom: 25px;
+  }
+
+  .answer-button {
+    font-size: 13px;
+    padding: 14px 5px;
+  }
+
+  .quiz-footer {
+    font-size: 8px;
+    letter-spacing: 1px;
+  }
+
+  .ending-visual {
+    width: 120px;
+    height: 120px;
+  }
+
+  .intro-bottom {
+    left: 20px;
+    right: 20px;
+    font-size: 8px;
+  }
+}
